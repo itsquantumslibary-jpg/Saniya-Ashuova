@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SanaHub - Health & Wellness Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>SanaHub</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link active" data-section="home">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#sanaedu" class="nav-link" data-section="sanaedu">
+                        <i class="fas fa-book-medical"></i> SANAEDU
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#sanatalk" class="nav-link" data-section="sanatalk">
+                        <i class="fas fa-comments"></i> SANATALK
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#sanaask" class="nav-link" data-section="sanaask">
+                        <i class="fas fa-robot"></i> SANAASK
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#saname" class="nav-link" data-section="saname">
+                        <i class="fas fa-user"></i> SANAME
+                    </a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Home Dashboard Section -->
+        <section id="home" class="section active">
+            <div class="container">
+                <h1 class="section-title">Health Dashboard</h1>
+                
+                <!-- Trend Graphs -->
+                <div class="trends-container">
+                    <div class="trend-graph">
+                        <h3>Activity Trend</h3>
+                        <canvas id="activityChart" width="400" height="200"></canvas>
+                    </div>
+                    <div class="trend-graph">
+                        <h3>Sleep Track Trend</h3>
+                        <canvas id="sleepChart" width="400" height="200"></canvas>
+                    </div>
+                </div>
+
+                <!-- Dashboard Boxes -->
+                <div class="dashboard-grid">
+                    <div class="dashboard-box" data-box="activity">
+                        <div class="box-header">
+                            <i class="fas fa-running"></i>
+                            <h3>Daily Activity</h3>
+                        </div>
+                        <div class="box-content">
+                            <p>Track your daily physical activities and exercise routines.</p>
+                            <button class="open-box-btn">Open</button>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-box" data-box="mood">
+                        <div class="box-header">
+                            <i class="fas fa-smile"></i>
+                            <h3>Mood Tracker</h3>
+                        </div>
+                        <div class="box-content">
+                            <p>Log your daily mood and emotional state.</p>
+                            <button class="open-box-btn">Open</button>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-box" data-box="habits">
+                        <div class="box-header">
+                            <i class="fas fa-tasks"></i>
+                            <h3>New Habit</h3>
+                        </div>
+                        <div class="box-content">
+                            <p>Create and track new healthy habits.</p>
+                            <button class="open-box-btn">Open</button>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-box" data-box="sleep">
+                        <div class="box-header">
+                            <i class="fas fa-moon"></i>
+                            <h3>Sleep Tracker</h3>
+                        </div>
+                        <div class="box-content">
+                            <p>Log your sleep patterns and quality.</p>
+                            <button class="open-box-btn">Open</button>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-box" data-box="summary">
+                        <div class="box-header">
+                            <i class="fas fa-chart-line"></i>
+                            <h3>Health Summary</h3>
+                        </div>
+                        <div class="box-content">
+                            <p>View your personalized health insights.</p>
+                            <button class="open-box-btn">Open</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Daily Affirmation -->
+                <div class="daily-affirmation">
+                    <h3>Daily Affirmation</h3>
+                    <p id="affirmation-text">"Nothing is made for nothing - every step forward is progress."</p>
+                </div>
+
+                <!-- World News -->
+                <div class="news-section">
+                    <h3>Today's Health News</h3>
+                    <div class="news-item">
+                        <h4>Latest Health Research</h4>
+                        <p>New studies show the importance of regular exercise for mental health...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SANAEDU Section -->
+        <section id="sanaedu" class="section">
+            <div class="container">
+                <h1 class="section-title">Disease Library</h1>
+                
+                <!-- Filter Section -->
+                <div class="filter-section">
+                    <div class="filter-group">
+                        <label for="disease-type">Disease Type:</label>
+                        <select id="disease-type">
+                            <option value="all">All Types</option>
+                            <option value="infectious">Infectious</option>
+                            <option value="chronic">Chronic</option>
+                            <option value="genetic">Genetic</option>
+                            <option value="autoimmune">Autoimmune</option>
+                            <option value="mental">Mental Health</option>
+                        </select>
+                    </div>
+                    <div class="search-box">
+                        <input type="text" id="disease-search" placeholder="Search diseases...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                </div>
+
+                <!-- Disease Cards -->
+                <div class="disease-grid" id="disease-grid">
+                    <!-- Disease cards will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- SANATALK Section -->
+        <section id="sanatalk" class="section">
+            <div class="container">
+                <h1 class="section-title">Community Forum</h1>
+                
+                <!-- Create Post -->
+                <div class="create-post">
+                    <h3>Create New Post</h3>
+                    <form id="post-form">
+                        <textarea id="post-content" placeholder="What's on your mind?"></textarea>
+                        <div class="post-actions">
+                            <input type="file" id="post-image" accept="image/*" style="display: none;">
+                            <button type="button" id="upload-image" class="btn-secondary">
+                                <i class="fas fa-image"></i> Add Image
+                            </button>
+                            <button type="submit" class="btn-primary">Post</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Posts Feed -->
+                <div class="posts-feed" id="posts-feed">
+                    <!-- Posts will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- SANAASK Section -->
+        <section id="sanaask" class="section">
+            <div class="container">
+                <h1 class="section-title">AI Health Assistant</h1>
+                
+                <!-- AI Chat -->
+                <div class="ai-chat-container">
+                    <div class="chat-header">
+                        <h3>AI Symptom Checker</h3>
+                        <span class="status-indicator">Online</span>
+                    </div>
+                    <div class="chat-messages" id="chat-messages">
+                        <div class="message ai-message">
+                            <p>Hello! I'm here to help you understand your symptoms. Please describe what you're experiencing.</p>
+                        </div>
+                    </div>
+                    <div class="chat-input">
+                        <input type="text" id="symptom-input" placeholder="Describe your symptoms...">
+                        <button id="send-symptom" class="btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Map Section -->
+                <div class="map-section">
+                    <h3>Find Healthcare Providers in Astana</h3>
+                    <div class="map-search">
+                        <input type="text" id="location-search" placeholder="Search for locations in Astana...">
+                        <button id="search-location" class="btn-primary">Search</button>
+                    </div>
+                    <div class="map-container">
+                        <div id="map" class="map-placeholder">
+                            <p>Map of Astana, Kazakhstan</p>
+                            <p>Search for healthcare facilities, pharmacies, and clinics</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SANAME Section -->
+        <section id="saname" class="section">
+            <div class="container">
+                <h1 class="section-title">Personal Profile</h1>
+                
+                <div class="profile-container">
+                    <div class="profile-header">
+                        <div class="profile-avatar">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <h2>Your Health Profile</h2>
+                    </div>
+
+                    <form class="profile-form" id="profile-form">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="age">Age</label>
+                            <input type="number" id="age" name="age" min="1" max="120" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="city">City</label>
+                            <input type="text" id="city" name="city" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="activity-level">Daily Activity Level</label>
+                            <select id="activity-level" name="activity-level">
+                                <option value="sedentary">Sedentary</option>
+                                <option value="light">Light Activity</option>
+                                <option value="moderate">Moderate Activity</option>
+                                <option value="active">Very Active</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="health-goals">Health Goals</label>
+                            <textarea id="health-goals" name="health-goals" placeholder="Describe your health and wellness goals..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="medical-conditions">Medical Conditions</label>
+                            <textarea id="medical-conditions" name="medical-conditions" placeholder="List any existing medical conditions..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-primary">Save Profile</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal for Dashboard Boxes -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
